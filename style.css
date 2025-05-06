@@ -1,0 +1,91 @@
+body{
+font-family: Arial, Helvetica, sans-serif;
+}
+h1,h2{
+    text-align: center;
+}
+.top{
+background-color: rgb(163, 180, 180);
+height: 7vh;
+width: auto;
+padding: 0;
+}
+.input-section{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content:space-between;
+    margin: 10px;
+    padding: 20px;
+    background-color: rgb(163, 180, 180);;
+    height: 7vh;
+    width: auto;
+}
+.input-section label{
+    margin:10px;
+}
+.ingroup{
+   display: flex;
+   flex-direction:row;
+   gap: 5px;
+   font-size: 18px;
+   font-weight: bold;
+}
+.ingroup input[type="number"],input[type="date"]{
+color: rgb(75, 99, 94);
+font-size: 15px;
+font-weight: bold;
+padding: 5px;
+border-radius: 12px;
+border-color:solid black;
+border-width: 3px;
+}
+.ingroup select[id="category-select"]{
+    color: rgb(75, 99, 94);
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 12px;
+border-color:solid black;
+border-width: 3px;
+}
+
+.input-section button{
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 17px;
+    background-color: beige;
+    cursor: pointer;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+td,th{
+    border: 2px solid black;
+    padding: 8px;
+    text-align: left;
+
+}
+th{
+    background-color: rgb(243, 167, 167);
+}
+tfoot{
+    font-weight: bold;
+}
+.delete-btn{
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 16px;
+    border: 0;
+    background-color: rgb(228, 44, 44);
+    cursor: pointer;
+    
+}
