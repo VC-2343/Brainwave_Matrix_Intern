@@ -1,12 +1,14 @@
 let expenses=[];
-let totalAmt=0;
+let totalAmt=50000;
 
 const categoryselect=document.getElementById('category-select')
 const amountip=document.getElementById('amount-input')
 const dateip=document.getElementById('date-input')
 const addbtn=document.getElementById('add-btn')
 const tablebody=document.getElementById('table-body')
-const total=document.getElementById('total-amnt')
+
+const total = document.getElementById('total-amnt');
+
 
 addbtn.addEventListener('click',function(){
     console.log("heyy clicked");
@@ -18,7 +20,7 @@ addbtn.addEventListener('click',function(){
         alert("Please select a category");
         return;
     }
-    if(isNaN(amount)||amount<=0){
+    if(isNaN(amount)||amount==0){
     alert("Please enter the valid amount");
 return;}
 
@@ -38,6 +40,8 @@ return;}
     const amountcell=newrow.insertCell();
     const datecell=newrow.insertCell();
     const deletecell=newrow.insertCell();
+    amountcell.textContent = amount;
+amountcell.style.color = amount > 0 ? 'green' : 'red';
 
     const deletebtn=document.createElement('button');
     deletebtn.textContent='delete';
@@ -77,18 +81,21 @@ for(const expense of expenses){
     deletebtn.classList.add('delete-btn');
 
     deletebtn.addEventListener('click',function(){
-        expenses.slice(expenses.indexOf(expense),1);
-    
-
-    totalAmt-=expense.amount;
-    total.textContent=totalAmt;
-
-    tablebody.removeChild(newrow);
+        const index = expenses.indexOf(expense);
+        if (index !== -1) {
+            expenses.splice(index, 1);
+            totalAmt -= amount;
+            total.textContent = totalAmt.toFixed(2);
+            tablebody.removeChild(newrow);}
 })
+
+
 const expense=expenses[expenses.length-1];
 
 categorycell.textContent=expense.category;
 amountcell.textContent=expense.amount;
 datecell.textContent=expense.date;
 deletecell.appendChild(deletebtn);
+
+
 }
